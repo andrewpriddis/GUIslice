@@ -114,7 +114,7 @@ extern "C" {
   //#include "../configs/ard-adagfx-ra8876-notouch.h"
   //#include "../configs/ard-adagfx-ra8876-ft5206.h"
   //#include "../configs/ard-adagfx-ssd1306-notouch.h"
-//   #include "../configs/ard-adagfx-st7735-notouch.h"
+  //#include "../configs/ard-adagfx-st7735-notouch.h"
   #include "../configs/ard-adagfx-st7789-notouch.h"
   //#include "../configs/due-adagfx-ili9225-notouch.h"
   //#include "../configs/due-adagfx-ili9341-ft6206.h"
@@ -128,8 +128,8 @@ extern "C" {
   //#include "../configs/esp-shld-wio-input.h"
   //#include "../configs/esp-shld-ttgo_btc_ticker.h"
   //#include "../configs/esp-tftespi-default-ft6206.h"
-//   #include "../configs/esp-tftespi-default-notouch.h"
-//   #include "../configs/esp-tftespi-default-simple.h"
+  //#include "../configs/esp-tftespi-default-notouch.h"
+  //#include "../configs/esp-tftespi-default-simple.h"
   //#include "../configs/esp-tftespi-default-stmpe610.h"
   //#include "../configs/esp-tftespi-default-xpt2046.h"
   //#include "../configs/esp-tftespi-default-xpt2046_int.h"
@@ -149,7 +149,7 @@ extern "C" {
 
   // Multi-device shields:
   // ------------------------------------------------------
-//   #include "../configs/mult-shld-adafruit_24_feather_touch.h"
+  //#include "../configs/mult-shld-adafruit_24_feather_touch.h"
   //#include "../configs/mult-shld-adafruit_35_feather_touch.h"
 
   // Raspberry Pi / LINUX:

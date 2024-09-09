@@ -452,6 +452,9 @@ extern "C" {
   #elif defined(DRV_DISP_LCDGFX_ST7789_128x160_SPI)
   const char* m_acDrvDisp = "LCDGFX (ST7789_128x160x16_SPI)";
   DisplayST7789_128x160x16_SPI m_disp(ADAGFX_PIN_RST, { -1,ADAGFX_PIN_CS,ADAGFX_PIN_DC,0,-1,-1 });
+  #elif defined(DRV_DISP_LCDGFX_ST7789_128x160_SPI)
+  const char* m_acDrvDisp = "LCDGFX (ST7789_128x160x16_SPI)";
+  DisplayST7789_128x160x16_SPI m_disp(ADAGFX_PIN_RST, { -1,ADAGFX_PIN_CS,ADAGFX_PIN_DC,0,-1,-1 });
   #elif defined(DRV_DISP_LCDGFX_ILI9341_240x320_SPI)
   const char* m_acDrvDisp = "LCDGFX (ILI9341_240x32x16_SPI)";
   DisplayILI9341_240x320x16_SPI m_disp(ADAGFX_PIN_RST, { -1,ADAGFX_PIN_CS,ADAGFX_PIN_DC,0,-1,-1 });
@@ -671,12 +674,21 @@ bool gslc_DrvInit(gslc_tsGui* pGui)
 
       // ST7789 requires additional initialization depending on
       // display type. Enable the user to specify the
-      // configuration via DRV_DISP_ADAGFX_ST7789_INIT.
+      // configuration via DRV_DISP_ADAGFX_ST7735_INIT.
       #ifndef DRV_DISP_ADAGFX_ST7789_INIT
-        m_disp.init(135,240);  // Default to Green Tab 1.44"
+        m_disp.initR(INITR_144GREENTAB);  // Default to Green Tab 1.44"
       #else
         m_disp.init(DRV_DISP_ADAGFX_ST7789_INIT);
       #endif
+    #elif defined(DRV_DISP_ADAGFX_ST7735)
+
+      // ST7735 requires additional initialization depending on
+      // display type. Enable the user to specify the
+      // configuration via DRV_DISP_ADAGFX_ST7789_INIT.
+      #ifndef DRV_DISP_ADAGFX_ST7735_INIT
+        m_disp.init(135,240);  // Default to Green Tab 1.44"
+      #else
+        m_disp.initR(DRV_DISP_ADAGFX_ST7735_INIT);
 
     #elif defined(DRV_DISP_ADAGFX_HX8347)
       m_disp.begin();
